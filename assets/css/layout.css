@@ -261,6 +261,8 @@ a.up:hover {
 }
 	#header .navbar-brand {
 		height:auto;
+        padding: 25px;
+        font-size: 2.5em;
 	}
 	#header .nav.navbar-nav {
 		margin-top:10px;
