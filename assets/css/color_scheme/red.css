@@ -18,6 +18,9 @@ h5 span, h6 span,
 div.featured-box.nobg.border-only i.fa {
 	color:#ED3E49 !important;
 }
+.navbar-brand {
+	color:#ED3E49 !important;
+}
 
 .featured,
 .btn-primary,.btn-primary:hover,.btn-primary:active,
