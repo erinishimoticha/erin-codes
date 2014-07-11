@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!--[if IE 8]>			<html class="ie ie8"> <![endif]-->
-<!--[if IE 9]>			<html class="ie ie9"> <![endif]-->
-<!--[if gt IE 9]><!-->	<html> <!--<![endif]-->
+<!--[if IE 8]>			<html class="ie ie8" ng-app="erincodes"> <![endif]-->
+<!--[if IE 9]>			<html class="ie ie9" ng-app="erincodes"> <![endif]-->
+<!--[if gt IE 9]><!-->	<html ng-app="erincodes"> <!--<![endif]-->
 	<head>
 		<meta charset="utf-8" />
 		<title>Erin Spiceland</title>
@@ -16,7 +16,7 @@
 		<meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1, user-scalable=0" />
 
 		<!-- WEB FONTS -->
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,800" rel="stylesheet" type="text/css" />
+		<link href="//fonts.googleapis.com/css?family=Open+Sans:300,400,600,800" rel="stylesheet" type="text/css" />
 
 		<!-- CORE CSS -->
 		<link href="plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -32,8 +32,10 @@
 
 		<!-- Morenizr -->
 		<script type="text/javascript" src="plugins/modernizr.min.js"></script>
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+		<script type="text/javascript" src="js/erin.codes.js"></script>
 	</head>
-	<body data-spy="scroll" data-offset="20" data-target="#navbar-collapse">
+	<body data-spy="scroll" data-offset="20" data-target="#navbar-collapse" ng-controller="SiteController">
 
 
 
@@ -79,7 +81,7 @@
 
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<div class="navbar-header">
-						<a href="#home" class="scrollTo navbar-brand" title="Erin Spiceland">erin codes</a>
+                        <a href="#home" class="scrollTo navbar-brand" title="{{site.name}}">{{site.name}}</a>
 					</div>
 
 					<!-- Collect the nav links, forms, and other content for toggling -->
@@ -90,9 +92,6 @@
 							<li><a class="scrollTo" href="#about">ABOUT</a></li>
 							<li><a class="scrollTo" href="#skills">SKILLS</a></li>
 							<li><a class="scrollTo" href="#portfolio">PORTFOLIO</a></li>
-                            <!--<li><a class="scrollTo" href="#experience">EXPERIENCE</a></li>-->
-                            <!--<li><a href="blog.html">BLOG</a></li>-->
-                            <!--<li><a class="scrollTo" href="#contact">CONTACT</a></li>-->
 						</ul>
 
 					</div><!-- /.navbar-collapse -->
@@ -232,7 +231,7 @@
 		<!-- /PARALLAX -->
 
 
-		<!-- SERVICES -->
+		<!-- SKILLS -->
 		<section id="skills">
 			<div class="container">
 				<a href="#" class="toTop up fa fa-chevron-up"><!-- arrow up - go home --></a>
@@ -245,116 +244,46 @@
 				</header>
 
 
-				<!-- SERVICES LIST -->
-				<div class="row">
+				<!-- SKILLS LIST -->
+				<div class="row" ng-controller="SkillsPairsController">
 
+                    <div ng-repeat="pair in pairs">
 					<!-- SERVICE 1 -->
-					<div class="service col-md-6 col-sm-6">
-						<div class="row text-right"><!-- right align -->
-							<!-- text -->
-							<div class="service-description col-md-9 col-sm-9">
-								<h4>Programming Languages</h4>
-                                <p>JavaScript, Python, Perl, Java. Familiar with Ruby, Bash, C. Know, but prefer not to spend time on HTML, CSS, PHP.</p>
-							</div>
+    					<div class="service col-md-6 col-sm-6">
+    						<div class="row text-right"><!-- right align -->
+    							<!-- text -->
+    							<div class="service-description col-md-9 col-sm-9">
+                                    <h4>{{pair[0].name}}</h4>
+                                    <p>{{pair[0].desc}}</p>
+		    					</div>
 
-							<!-- icon -->
-							<div class="service-icon col-md-3 col-sm-3">
-								<i class="featured-icon half fa fa-code text-center"></i>
-							</div>
-						</div>
-					</div>
-					<!-- /SERVICE 1 -->
+	    						<!-- icon -->
+    							<div class="service-icon col-md-3 col-sm-3">
+                                    <i class="featured-icon half fa {{pair[0].icon}} text-center"></i>
+    							</div>
+	    					</div>
+		    			</div>
+	    				<!-- /SERVICE 1 -->
 
-					<!-- SERVICE 2 -->
-					<div class="service col-md-6 col-sm-6">
+    					<!-- SERVICE 2 -->
+    					<div class="service col-md-6 col-sm-6">
 
-						<div class="row text-left"><!-- left align -->
-							<!-- icon -->
-							<div class="service-icon col-md-3 col-sm-3">
-								<i class="featured-icon half fa fa-database text-center"></i>
-							</div>
+    						<div class="row text-left"><!-- left align -->
+    							<!-- icon -->
+    							<div class="service-icon col-md-3 col-sm-3">
+                                    <i class="featured-icon half fa {{pair[1].icon}} text-center"></i>
+    							</div>
 
-							<!-- text -->
-							<div class="service-description col-md-9 col-sm-9">
-                                <h4>Databases and Servers</h4>
-                                <p>Node.js, Redis, PostGreSQL, MySQL, Apache, Asterisk. Familiar with MongoDB, Lighttpd, Tomcat.</p>
-							</div>
-						</div>
+    							<!-- text -->
+    							<div class="service-description col-md-9 col-sm-9">
+                                    <h4>{{pair[1].name}}</h4>
+                                    <p>{{pair[1].desc}}</p>
+    							</div>
+    						</div>
 
-					</div>
-					<!-- /SERVICE 2 -->
-
-					<!-- SERVICE 3 -->
-					<div class="service col-md-6 col-sm-6">
-						<div class="row text-right"><!-- right align -->
-							<!-- text -->
-							<div class="service-description col-md-9 col-sm-9">
-								<h4>Protocols and Standards</h4>
-                                <p>TCP/IP, WebRTC, HTTP, REST, WebSockets, XML, AJAX. Familiar with SIP, RTP/SRTP.</p>
-							</div>
-
-							<!-- icon -->
-							<div class="service-icon col-md-3 col-sm-3">
-								<i class="featured-icon half fa fa-university text-center"></i>
-							</div>
-						</div>
-					</div>
-					<!-- /SERVICE 3 -->
-
-					<!-- SERVICE 4 -->
-					<div class="col-md-6 col-sm-6">
-
-						<div class="service row text-left"><!-- left align -->
-							<!-- icon -->
-							<div class="service-icon col-md-3 col-sm-3">
-								<i class="featured-icon half fa fa-list-ol text-center"></i>
-							</div>
-
-							<!-- text -->
-							<div class="service-description col-md-9 col-sm-9">
-								<h4>Methodologies and Processes</h4>
-                                <p>Agile/Scrum, REST, MVC, Object-oriented programming. Git, SVN</p>
-							</div>
-						</div>
-
-					</div>
-					<!-- /SERVICE 4 -->
-
-					<!-- SERVICE 5 -->
-					<div class="service col-md-6 col-sm-6">
-						<div class="row text-right"><!-- right align -->
-							<!-- text -->
-							<div class="service-description col-md-9 col-sm-9">
-								<h4>Operating Systems and Platforms</h4>
-                                <p>Linux, Unix, OS X. Heroku, Familiar with AWS. Prefer not to work in or near Windows.</p>
-							</div>
-
-							<!-- icon -->
-							<div class="service-icon col-md-3 col-sm-3">
-								<i class="featured-icon half fa fa-linux text-center"></i>
-							</div>
-						</div>
-					</div>
-					<!-- /SERVICE 5 -->
-
-					<!-- SERVICE 6 -->
-					<div class="col-md-6 col-sm-6">
-
-						<div class="service row text-left"><!-- left align -->
-							<!-- icon -->
-							<div class="service-icon col-md-3 col-sm-3">
-								<i class="featured-icon half fa fa-trophy text-center"></i>
-							</div>
-
-							<!-- text -->
-							<div class="service-description col-md-9 col-sm-9">
-								<h4>Specialties</h4>
-								<p>Software Architecture, API design, Integration, Interoperability</p>
-							</div>
-						</div>
-
-					</div>
-					<!-- /SERVICE 6 -->
+    					</div>
+                    </div>
+		    			<!-- /SERVICE 2 -->
 
 				</div>
 				<!-- /SERVICES LIST -->
@@ -395,194 +324,26 @@
 
 					<div class="row portfolio-items">
 
-						<ul class="sort-destination isotope" data-sort-id="isotope-list">
+						<ul class="sort-destination isotope" data-sort-id="isotope-list" ng-controller="ProjectsController">
 
-							<li class="isotope-item col-sm-6 col-md-3 development">
+                    <div ng-repeat="project in projects">
+
+                        <li class="isotope-item col-sm-6 col-md-3 {{project.templateClass}}">
 								<div class="item-box">
 									<figure>
-										<a class="item-hover ajax-project" href="code-generator.html">
+                                        <!-- use class 'ajax-project' for loading external resource in popup -->
+                                        <a class="item-hover" href="{{project.externalLink}}" data-plugin-options="{{project.dataPluginOptions}}">
 											<span class="overlay"></span>
 											<span class="inner">
-												<span class="block fa fa-external-link fsize20"></span>
-												<strong>Asterisk REST Client Library Generator</strong>
+                                                <span class="block fa fa-{{project.type}} fsize20"></span>
+                                                <strong>{{project.name}}</strong>
 											</span>
 										</a>
-										<img class="img-responsive" src="images/demo/portfolio/thumb/code-generator.jpg" height="263" alt="">
+                                        <img class="img-responsive" src="{{project.image}}" height="263" alt="">
 									</figure>
 									<div class="item-box-desc">
-										<h4>Asterisk Code Generator</h4>
-										<small class="styleColor">February 2013 - April 2013</small>
-									</div>
-								</div>
-							</li>
-
-							<li class="isotope-item col-sm-6 col-md-3 photography">
-								<div class="item-box">
-									<figure>
-										<a class="item-hover ajax-project" href="gateway.html">
-											<span class="overlay"></span>
-											<span class="inner">
-												<span class="block fa fa-external-link fsize20"></span>
-												<strong>Digium VoIP Gateway Configuration Interface</strong>
-											</span>
-										</a>
-										<img class="img-responsive" src="images/demo/portfolio/thumb/gateway.jpg" height="263" alt="">
-									</figure>
-									<div class="item-box-desc">
-										<h4>Web App for Appliance Configuration</h4>
-										<small class="styleColor">May 2011 - May 2013</small>
-									</div>
-								</div>
-							</li>
-
-							<li class="isotope-item col-sm-6 col-md-3 photography">
-								<div class="item-box">
-									<figure>
-										<a class="item-hover ajax-project" href="project-external-3.html">
-											<span class="overlay"></span>
-											<span class="inner">
-												<span class="block fa fa-external-link fsize20"></span>
-												<strong>WWW::Geni Perl Module</strong>
-											</span>
-										</a>
-										<img class="img-responsive" src="images/demo/portfolio/thumb/geni.jpg" height="263" alt="">
-									</figure>
-									<div class="item-box-desc">
-										<h4>WWW::Geni Perl Module</h4>
-										<small class="styleColor">2011</small>
-									</div>
-								</div>
-							</li>
-
-							<li class="isotope-item col-sm-6 col-md-3 design">
-								<div class="item-box">
-									<figure>
-										<a class="item-hover lightbox" href="http://www.youtube.com/watch?v=W7Las-MJnJo" data-plugin-options='{"type":"iframe"}'>
-											<span class="overlay"></span>
-											<span class="inner">
-												<span class="block fa fa-video-camera fsize20"></span>
-												<strong>Asterisk Documentation Publishing Tool</strong>
-											</span>
-										</a>
-										<img class="img-responsive" src="images/demo/portfolio/thumb/document.jpg" height="263" alt="">
-									</figure>
-									<div class="item-box-desc">
-										<h4>Docs Publishing Tool</h4>
-										<small class="styleColor">September 2010 - October 2011</small>
-									</div>
-								</div>
-							</li>
-
-							<li class="isotope-item col-sm-6 col-md-3 development">
-								<div class="item-box">
-									<figure>
-										<a class="item-hover lightbox" href="http://www.youtube.com/watch?v=W7Las-MJnJo" data-plugin-options='{"type":"iframe"}'>
-											<span class="overlay"></span>
-											<span class="inner">
-												<span class="block fa fa-plus fsize20"></span>
-                                                <strong>This website: Erin Codes</strong>
-											</span>
-										</a>
-										<img class="img-responsive" src="images/demo/portfolio/thumb/erin.codes.jpg" height="263" alt="">
-									</figure>
-									<div class="item-box-desc">
-										<h4>This website: Erin Codes</h4>
-										<small class="styleColor">June 2014 - Present</small>
-									</div>
-								</div>
-							</li>
-
-							<li class="isotope-item col-sm-6 col-md-3 development">
-								<div class="item-box">
-									<figure>
-										<a class="item-hover lightbox" href="http://www.youtube.com/watch?v=W7Las-MJnJo" data-plugin-options='{"type":"iframe"}'>
-											<span class="overlay"></span>
-											<span class="inner">
-												<span class="block fa fa-plus fsize20"></span>
-                                                <strong>JSDoc3 Confluence Template</strong>
-											</span>
-										</a>
-										<img class="img-responsive" src="images/demo/portfolio/thumb/dont-always-document.jpg" height="263" alt="">
-									</figure>
-									<div class="item-box-desc">
-										<h4>JSDoc3 Confluence Template</h4>
-										<small class="styleColor">August 2013 - Present</small>
-									</div>
-								</div>
-							</li>
-
-							<li class="isotope-item col-sm-6 col-md-3 design">
-								<div class="item-box">
-									<figure>
-										<a class="item-hover lightbox" href="images/demo/portfolio/6.jpg" data-plugin-options='{"type":"image"}'>
-											<span class="overlay"></span>
-											<span class="inner">
-												<span class="block fa fa-plus fsize20"></span>
-												<strong>GEICO Web App for Calculating Insurance Rates</strong>
-											</span>
-										</a>
-										<img class="img-responsive" src="images/demo/portfolio/thumb/geico-gecko.jpg" height="263" alt="">
-									</figure>
-									<div class="item-box-desc">
-										<h4>Web App for Calculating Insurance Rates</h4>
-										<small class="styleColor">2005</small>
-									</div>
-								</div>
-							</li>
-
-							<li class="isotope-item col-sm-6 col-md-3 design">
-								<div class="item-box">
-									<figure>
-										<a class="item-hover lightbox" href="images/demo/portfolio/6.jpg" data-plugin-options='{"type":"image"}'>
-											<span class="overlay"></span>
-											<span class="inner">
-												<span class="block fa fa-plus fsize20"></span>
-												<strong>GEDCOM Formatter for Ancestry.com's RootsWeb</strong>
-											</span>
-										</a>
-										<img class="img-responsive" src="images/demo/portfolio/thumb/geni.jpg" height="263" alt="">
-									</figure>
-									<div class="item-box-desc">
-										<h4>GEDCOM Formatter for Ancestry.com's RootsWeb</h4>
-										<small class="styleColor">May 2012</small>
-									</div>
-								</div>
-							</li>
-
-							<li class="isotope-item col-sm-6 col-md-3 design">
-								<div class="item-box">
-									<figure>
-										<a class="item-hover lightbox" href="images/demo/portfolio/6.jpg" data-plugin-options='{"type":"image"}'>
-											<span class="overlay"></span>
-											<span class="inner">
-												<span class="block fa fa-plus fsize20"></span>
-												<strong>Geni.com Profile Merger</strong>
-											</span>
-										</a>
-										<img class="img-responsive" src="images/demo/portfolio/thumb/geni.jpg" height="263" alt="">
-									</figure>
-									<div class="item-box-desc">
-										<h4>GEDCOM Formatter for Ancestry.com's RootsWeb</h4>
-										<small class="styleColor">May 2012</small>
-									</div>
-								</div>
-							</li>
-
-							<li class="isotope-item col-sm-6 col-md-3 design">
-								<div class="item-box">
-									<figure>
-										<a class="item-hover lightbox" href="images/demo/portfolio/6.jpg" data-plugin-options='{"type":"image"}'>
-											<span class="overlay"></span>
-											<span class="inner">
-												<span class="block fa fa-plus fsize20"></span>
-												<strong>FuzzyMonkey.net WebHosting Provider</strong>
-											</span>
-										</a>
-										<img class="img-responsive" src="images/demo/portfolio/thumb/fuzzymonkey.jpg" height="263" alt="">
-									</figure>
-									<div class="item-box-desc">
-										<h4>Built WebHosting Company</h4>
-										<small class="styleColor">2002-2013</small>
+                                        <h4>{{project.shortName}}</h4>
+                                        <small class="styleColor">{{project.date}}</small>
 									</div>
 								</div>
 							</li>
@@ -877,6 +638,9 @@
                 The awesome seashell fractal picture is licensed <a href="http://en.wikipedia.org/wiki/Logarithmic_spiral#mediaviewer/File:NautilusCutawayLogarithmicSpiral.jpg">Creative Commons</a><br />
                 The cool London Passenger Transport Board Piston Rod Gland Spring picture was taken by <a href="https://www.flickr.com/photos/futureshape/6786363010/a">futureshape</a> and is resized and masked by CSS here.<br />
                 The laptop with hands programming is in the <a href="http://pixabay.com/en/computer-technology-programming-339836/">public domain</a><br />
+                The Digium Logo and Switchvox graphics are &copy; <a href="http://digium.com">Digium, Inc.</a><br />
+                The Geni logo is &copy; <a href="http://geni.com">Geni</a><br />
+                The GEICO Gecko is &copy; <a href="http://geico.com">GEICO</a><br />
             </div>
 
 			<div class="socials">
