@@ -323,11 +323,10 @@
 
 					<div class="row portfolio-items">
 
-						<ul class="sort-destination isotope" data-sort-id="isotope-list" ng-controller="ProjectsController">
+				    <ul class="sort-destination isotope" data-sort-id="isotope-list" ng-controller="ProjectsController">
+                        <div ng-repeat="project in projects">
 
-                    <div ng-repeat="project in projects">
-
-                        <li class="isotope-item col-sm-6 col-md-3 {{project.templateClass}}">
+                            <li class="isotope-item col-sm-6 col-md-3 {{project.templateClass}}">
 								<div class="item-box">
 									<figure>
                                         <!-- use class 'ajax-project' for loading external resource in popup -->
@@ -346,9 +345,9 @@
 									</div>
 								</div>
 							</li>
-						</ul>
 
-					</div><!-- /.masonry-container -->
+					    </div><!-- /.masonry-container -->
+			        </ul>
 
 					<!-- CALLOUT -->
 					<!--<div class="bs-callout text-center nomargin-bottom">
