@@ -10,8 +10,8 @@ erincodes.controller('SiteController', function ($scope) {
 erincodes.controller('SkillsPairsController', function ($scope) {
     $scope.pairs = [
         [{
-            name: "Programming Languages",
-            desc: "JavaScript, Python, Perl, Java. Familiar with Ruby, Bash, C. Know, but prefer not to spend time on HTML, CSS, PHP.",
+            name: "Languages",
+            desc: "JavaScript, Python, Perl, Java. Familiar with Ruby, Bash, C.",
             icon: "fa-code"
         }, {
             name: "Databases and Servers",
@@ -27,7 +27,7 @@ erincodes.controller('SkillsPairsController', function ($scope) {
             icon: "fa-list-ol"
         }], [{
             name: "Operating Systems and Platforms",
-            desc: "Linux, Unix, OS X. Heroku, Familiar with AWS. Prefer not to work in or near Windows.",
+            desc: "Linux, Unix, OS X. Heroku, Familiar with AWS.",
             icon: "fa-linux"
         }, {
             name: "Specialties",
