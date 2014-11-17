@@ -45,7 +45,7 @@ erincodes.controller('ProjectsController', function ($scope) {
         type: "external-link",
         name: "Respoke JavaScript Client Library",
         shortName: "Respoke Library",
-        image: "images/demo/portfolio/thumb/respoke.png",
+        image: "images/portfolio/respoke.png",
         date: "August 2013 - Present",
         templateClass: "development",
         dataPluginOptions: ''
@@ -54,7 +54,7 @@ erincodes.controller('ProjectsController', function ($scope) {
         type: "external-link",
         name: "Asterisk REST Client Library Generator",
         shortName: "Asterisk Code Generator",
-        image: "images/demo/portfolio/thumb/code-generator.jpg",
+        image: "images/portfolio/code-generator.jpg",
         date: "February 2013 - April 2013",
         templateClass: "development",
         dataPluginOptions: ''
@@ -63,7 +63,7 @@ erincodes.controller('ProjectsController', function ($scope) {
         type: "external-link",
         name: "Digium VoIP Gateway Configuration Interface",
         shortName: "Web App for Appliance Configuration",
-        image: "images/demo/portfolio/thumb/gateway.jpg",
+        image: "images/portfolio/gateway.jpg",
         date: "May 2011 - May 2013",
         templateClass: "photography",
         dataPluginOptions: ''
@@ -72,7 +72,7 @@ erincodes.controller('ProjectsController', function ($scope) {
         type: "external-link",
         name: "WWW::Geni Perl Module",
         shortName: "WWW::Geni Perl Module",
-        image: "images/demo/portfolio/thumb/geni.jpg",
+        image: "images/portfolio/geni.jpg",
         date: "2011",
         templateClass: "photography",
         dataPluginOptions: ''
@@ -81,7 +81,7 @@ erincodes.controller('ProjectsController', function ($scope) {
         type: "blank",
         name: "Asterisk Documentation Publishing Tool",
         shortName: "Docs Publishing Tool",
-        image: "images/demo/portfolio/thumb/document.jpg",
+        image: "images/portfolio/document.jpg",
         date: "September 2010 - October 2011",
         templateClass: "design",
         dataPluginOptions: ''
@@ -90,7 +90,7 @@ erincodes.controller('ProjectsController', function ($scope) {
         type: "external-link",
         name: "This website: Erin Codes",
         shortName: "This website: Erin Codes",
-        image: "images/demo/portfolio/thumb/erin.codes.jpg",
+        image: "images/portfolio/erin.codes.jpg",
         date: "June 2014 - Present",
         templateClass: "development",
         dataPluginOptions: ''
@@ -99,7 +99,7 @@ erincodes.controller('ProjectsController', function ($scope) {
         type: "plus",
         name: "JSDoc3 Confluence Template",
         shortName: "JSDoc3 Confluence Template",
-        image: "images/demo/portfolio/thumb/dont-always-document.jpg",
+        image: "images/portfolio/dont-always-document.jpg",
         date: "August 2013 - Present",
         templateClass: "development",
         dataPluginOptions: ''
@@ -108,7 +108,7 @@ erincodes.controller('ProjectsController', function ($scope) {
         type: "plus",
         name: "GEICO Web App for Calculating Insurance Rates",
         shortName: "Web App for Calculating Insurance Rates",
-        image: "images/demo/portfolio/thumb/geico-gecko.jpg",
+        image: "images/portfolio/geico-gecko.jpg",
         date: "2005",
         templateClass: "design",
         dataPluginOptions: ''
@@ -117,7 +117,7 @@ erincodes.controller('ProjectsController', function ($scope) {
         type: "external-link",
         name: "GEDCOM Formatter for Ancestry.com's RootsWeb",
         shortName: "GEDCOM Parser",
-        image: "images/demo/portfolio/thumb/family-tree.jpg",
+        image: "images/portfolio/family-tree.jpg",
         date: "May 2012",
         templateClass: "plus",
         dataPluginOptions: ''
@@ -126,7 +126,7 @@ erincodes.controller('ProjectsController', function ($scope) {
         type: "external-link",
         name: "Geni.com Profile Merger",
         shortName: "Geni.com Profile Merger",
-        image: "images/demo/portfolio/thumb/geni.jpg",
+        image: "images/portfolio/geni.jpg",
         date: "May 2012",
         templateClass: "design",
         dataPluginOptions: ''
@@ -135,7 +135,7 @@ erincodes.controller('ProjectsController', function ($scope) {
         type: "external-link",
         name: "FuzzyMonkey.net WebHosting Provider",
         shortName: "Built WebHosting Company",
-        image: "images/demo/portfolio/thumb/fuzzymonkey.jpg",
+        image: "images/portfolio/fuzzymonkey.jpg",
         date: "2002-2013",
         templateClass: "design",
         dataPluginOptions: ''
