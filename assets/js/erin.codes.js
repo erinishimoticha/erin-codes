@@ -95,8 +95,8 @@ erincodes.controller('ProjectsController', function ($scope) {
         templateClass: "development",
         dataPluginOptions: ''
     }, {
-        externalLink: "#",
-        type: "plus",
+        externalLink: "https://github.com/erinspice/confluence-jsdoc-template",
+        type: "external-link",
         name: "JSDoc3 Confluence Template",
         shortName: "JSDoc3 Confluence Template",
         image: "images/demo/portfolio/thumb/dont-always-document.jpg",
