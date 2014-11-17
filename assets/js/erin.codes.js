@@ -41,6 +41,15 @@ erincodes.controller('ProjectsController', function ($scope) {
     // set dataPluginOptions: '{"type":"iframe"}' for youtube
 
     $scope.projects = [{
+        externalLink: "https://github.com/respoke/respoke",
+        type: "external-link",
+        name: "Respoke JavaScript Client Library",
+        shortName: "Respoke Library",
+        image: "images/demo/portfolio/thumb/respoke.png",
+        date: "August 2013 - Present",
+        templateClass: "development",
+        dataPluginOptions: ''
+    }, {
         externalLink: "https://github.com/asterisk/asterisk_rest_libraries",
         type: "external-link",
         name: "Asterisk REST Client Library Generator",
