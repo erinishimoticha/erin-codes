@@ -78,7 +78,7 @@ erincodes.controller('ProjectsController', function ($scope) {
         dataPluginOptions: ''
     }, {
         externalLink: "https://github.com/asterisk/publish-docs",
-        type: "blank",
+        type: "external-link",
         name: "Asterisk Documentation Publishing Tool",
         shortName: "Docs Publishing Tool",
         image: "images/demo/portfolio/thumb/document.jpg",
@@ -104,8 +104,7 @@ erincodes.controller('ProjectsController', function ($scope) {
         templateClass: "development",
         dataPluginOptions: ''
     }, {
-        externalLink: "#",
-        type: "plus",
+        type: "blank",
         name: "GEICO Web App for Calculating Insurance Rates",
         shortName: "Web App for Calculating Insurance Rates",
         image: "images/demo/portfolio/thumb/geico-gecko.jpg",
@@ -119,7 +118,7 @@ erincodes.controller('ProjectsController', function ($scope) {
         shortName: "GEDCOM Parser",
         image: "images/demo/portfolio/thumb/family-tree.jpg",
         date: "May 2012",
-        templateClass: "plus",
+        templateClass: "development",
         dataPluginOptions: ''
     }, {
         externalLink: "https://github.com/erinspice/geni-automerge",
