@@ -3,6 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "description": "a Sails application",
+  "engines": {
+      "node": "0.10.35"
+  },
   "dependencies": {
     "sails": "~0.9.16",
     "grunt": "0.4.1",
