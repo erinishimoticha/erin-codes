@@ -11,15 +11,15 @@ erincodes.controller('SkillsPairsController', function ($scope) {
     $scope.pairs = [
         [{
             name: "Languages",
-            desc: "JavaScript, Python, Perl, Java. Familiar with Ruby, Bash, C.",
+            desc: "Node.js, JavaScript, Python, Perl, Java. Familiar with Ruby, Bash, C.",
             icon: "fa-code"
         }, {
             name: "Databases and Servers",
-            desc: "Node.js, Redis, PostGreSQL, MySQL, Apache, Asterisk. Familiar with MongoDB, Lighttpd, Tomcat.",
+            desc: "Redis, PostGreSQL, InfluxDB, DynamoDB, MySQL, Apache, Asterisk. Familiar with MongoDB, Lighttpd, Tomcat.",
             icon: "fa-database"
         }], [{
             name: "Protocols and Standards",
-            desc: "TCP/IP, WebRTC, HTTP, REST, WebSockets, XML, AJAX. Familiar with SIP, RTP/SRTP.",
+            desc: "ZeroMQ, TCP/IP, WebRTC, HTTP, REST, WebSockets, XML, AJAX. Familiar with SIP, RTP/SRTP.",
             icon: "fa-university"
         }, {
             name: "Methodologies and Processes",
@@ -31,7 +31,7 @@ erincodes.controller('SkillsPairsController', function ($scope) {
             icon: "fa-linux"
         }, {
             name: "Specialties",
-            desc: "Software Architecture, API design, Integration, Interoperability",
+            desc: "Software Architecture, API design, Integration, Interoperability, Backend Software Engineering and Development.",
             icon: "fa-trophy"
         }]
     ];
@@ -41,12 +41,21 @@ erincodes.controller('ProjectsController', function ($scope) {
     // set dataPluginOptions: '{"type":"iframe"}' for youtube
 
     $scope.projects = [{
+        externalLink: "https://nodesource.com/products/nsolid",
+        type: "external-link",
+        name: "N|Solid Node.js Runtime",
+        shortName: "N|Solid",
+        image: "images/portfolio/nsolid.png",
+        date: "June 2016 - Present",
+        templateClass: "development",
+        dataPluginOptions: ''
+    }, {
         externalLink: "https://github.com/respoke/respoke",
         type: "external-link",
         name: "Respoke JavaScript Client Library",
         shortName: "Respoke Library",
         image: "images/portfolio/respoke.png",
-        date: "August 2013 - Present",
+        date: "August 2013 - June 2016",
         templateClass: "development",
         dataPluginOptions: ''
     }, {
