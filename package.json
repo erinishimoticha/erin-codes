@@ -1,25 +1,21 @@
 {
   "name": "erin-codes",
-  "private": true,
-  "version": "0.0.0",
-  "description": "a Sails application",
+  "version": "1.0.0",
+  "description": "My website & resume.",
   "engines": {
-      "node": "0.10.35"
+    "node": ">=6.0.0"
   },
   "dependencies": {
-    "sails": "~0.9.16",
-    "grunt": "0.4.1",
-    "sails-disk": "~0.9.0",
-    "ejs": "0.8.4",
-    "optimist": "0.3.4",
-    "sails-sqlite3": "git+https://github.com/AndrewJo/sails-sqlite3.git"
+    "express": "^4.14.0"
   },
   "scripts": {
     "start": "node app.js",
-    "debug": "node debug app.js"
+    "standard": "standard"
   },
   "main": "app.js",
   "author": "Erin Spiceland <yes@erin.codes>",
   "license": "BSD-2-Clause",
-  "devDependencies": {}
+  "devDependencies": {
+    "standard": "^8.5.0"
+  }
 }
