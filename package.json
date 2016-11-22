@@ -6,10 +6,11 @@
     "node": ">=6.0.0"
   },
   "dependencies": {
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "sqlite3": "^3.1.8"
   },
   "scripts": {
-    "test": "node test/index.js",
+    "test": "node test/index.js | tap-spec",
     "start": "node app.js",
     "standard": "standard"
   },
@@ -17,10 +18,14 @@
   "author": "Erin Spiceland <yes@erin.codes>",
   "license": "BSD-2-Clause",
   "standard": {
-    "ignore": ["assets/plugins/", "assets/js/scripts.js"]
+    "ignore": [
+      "assets/plugins/",
+      "assets/js/scripts.js"
+    ]
   },
   "devDependencies": {
     "standard": "^8.5.0",
+    "tap-spec": "^4.1.1",
     "tape": "^4.6.3"
   }
 }
