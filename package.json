@@ -9,13 +9,18 @@
     "express": "^4.14.0"
   },
   "scripts": {
+    "test": "node test/index.js",
     "start": "node app.js",
     "standard": "standard"
   },
   "main": "app.js",
   "author": "Erin Spiceland <yes@erin.codes>",
   "license": "BSD-2-Clause",
+  "standard": {
+    "ignore": ["assets/plugins/", "assets/js/scripts.js"]
+  },
   "devDependencies": {
-    "standard": "^8.5.0"
+    "standard": "^8.5.0",
+    "tape": "^4.6.3"
   }
 }
