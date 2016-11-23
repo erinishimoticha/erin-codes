@@ -11,7 +11,7 @@
     "sqlite3": "^3.1.8"
   },
   "scripts": {
-    "test": "node test/index.js | tap-spec",
+    "test": "npm run standard && node test/index.js | tap-spec",
     "start": "node app.js",
     "standard": "standard"
   },

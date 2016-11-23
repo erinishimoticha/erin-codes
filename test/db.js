@@ -12,17 +12,17 @@ function runTests () {
     db.setupTables(function (err) {
       t.notOk(err, 'Create table function runs successfully.')
 
-        const query = 'SELECT name FROM sqlite_master WHERE type=\'table\''
-        db.all(query, (err, list) => {
-          t.notOk(err, 'We can ask for a list of tables.')
-          t.ok(list, 'We get back a list of tables.')
+      const query = 'SELECT name FROM sqlite_master WHERE type=\'table\''
+      db.all(query, (err, list) => {
+        t.notOk(err, 'We can ask for a list of tables.')
+        t.ok(list, 'We get back a list of tables.')
 
-          const skillsTable = list.filter(table => table.name === 'skills')
-          const projectsTable = list.filter(table => table.name === 'projects')
-          t.ok(skillsTable, 'Skills table is in the list')
-          t.ok(projectsTable, 'Projects table is in the list')
-          t.end()
-        })
+        const skillsTable = list.filter(table => table.name === 'skills')
+        const projectsTable = list.filter(table => table.name === 'projects')
+        t.ok(skillsTable, 'Skills table is in the list')
+        t.ok(projectsTable, 'Projects table is in the list')
+        t.end()
+      })
     })
   })
 
