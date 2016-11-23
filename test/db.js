@@ -8,7 +8,7 @@ const db = new Database(':memory:')
 db.on('open', () => runTests())
 
 function runTests () {
-  test(`${testName} can create all the tables`, t => {
+  test(`${testName} the setupTables method`, t => {
     db.setupTables(function (err) {
       t.notOk(err, 'Create table function runs successfully.')
 
@@ -23,6 +23,57 @@ function runTests () {
           t.ok(projectsTable, 'Projects table is in the list')
           t.end()
         })
+    })
+  })
+
+  test(`${testName} the insertSkills method with valid params`, t => {
+    db.insertSkill({
+      name: 'Languages',
+      desc: 'Node.js, JavaScript, Python, Perl, Java. Familiar with Ruby, Bash, C.',
+      icon: 'fa-code',
+      row: 0,
+      side: 0
+    }, err => {
+      t.notOk(err, 'We can insert a set of skills')
+      t.end()
+    })
+  })
+
+  test(`${testName} the insertSkills method with missing params`, t => {
+    db.insertSkill({
+      name: 'Languages',
+      desc: 'Node.js, JavaScript, Python, Perl, Java. Familiar with Ruby, Bash, C.',
+      icon: 'fa-code',
+      side: 0
+    }, err => {
+      t.ok(err, 'We get an error.')
+      t.end()
+    })
+  })
+
+  test(`${testName} the insertSkills method with invalid string param`, t => {
+    db.insertSkill({
+      name: 'Languages',
+      desc: 10,
+      icon: 'fa-code',
+      row: 0,
+      side: 0
+    }, err => {
+      t.ok(err, 'We get an error.')
+      t.end()
+    })
+  })
+
+  test(`${testName} the insertSkills method with invalid number param`, t => {
+    db.insertSkill({
+      name: 'Languages',
+      desc: 'Node.js, JavaScript, Python, Perl, Java. Familiar with Ruby, Bash, C.',
+      icon: 'fa-code',
+      row: 'wrong',
+      side: 0
+    }, err => {
+      t.ok(err, 'We get an error.')
+      t.end()
     })
   })
 }
