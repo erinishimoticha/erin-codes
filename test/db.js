@@ -8,14 +8,19 @@ const db = new Database(':memory:')
 db.on('open', () => runTests())
 
 function runTests () {
-  test(`${testName} can create the skills table`, t => {
+  test(`${testName} can create all the tables`, t => {
     db.setupTables(function (err) {
       t.notOk(err, 'Create table function runs successfully.')
 
-        db.all('SELECT name FROM sqlite_master WHERE type=\'table\'', function (err, list) {
+        const query = 'SELECT name FROM sqlite_master WHERE type=\'table\''
+        db.all(query, (err, list) => {
           t.notOk(err, 'We can ask for a list of tables.')
           t.ok(list, 'We get back a list of tables.')
-          t.equals(list[0].name, 'skills', 'Skills table is in the list')
+
+          const skillsTable = list.filter(table => table.name === 'skills')
+          const projectsTable = list.filter(table => table.name === 'projects')
+          t.ok(skillsTable, 'Skills table is in the list')
+          t.ok(projectsTable, 'Projects table is in the list')
           t.end()
         })
     })
