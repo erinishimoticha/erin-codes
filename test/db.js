@@ -76,4 +76,13 @@ function runTests () {
       t.end()
     })
   })
+
+  test(`${testName} the listSkills`, t => {
+    db.listSkills((err, skills) => {
+      t.notOk(err, 'No error is returned.')
+      t.ok(skills, 'We can retreive a list of skills.')
+      t.ok(skills[0], 'The list has entries in it.')
+      t.end()
+    })
+  })
 }
