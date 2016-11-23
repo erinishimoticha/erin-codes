@@ -85,4 +85,35 @@ function runTests () {
       t.end()
     })
   })
+
+  test(`${testName} the insertProject method with valid params`, t => {
+    db.insertProject({
+      externalLink: 'https://nodesource.com/products/nsolid',
+      type: 'external-link',
+      name: 'N|Solid Node.js Runtime',
+      shortName: 'N|Solid',
+      image: 'images/portfolio/nsolid.png',
+      date: 'June 2016 - Present',
+      templateClass: 'development'
+    }, err => {
+      t.notOk(err, 'We can insert a project')
+      t.end()
+    })
+  })
+
+  test(`${testName} the listProjects`, t => {
+    db.listProjects((err, projects) => {
+      t.notOk(err, 'No error is returned.')
+      t.ok(projects, 'We can retreive a list of projects.')
+      t.ok(projects[0], 'The list has entries in it.')
+      t.ok(projects[0].externalLink, 'The project has a externalLink.')
+      t.ok(projects[0].type, 'The project has a type.')
+      t.ok(projects[0].name, 'The project has a name.')
+      t.ok(projects[0].shortName, 'The project has a shortName.')
+      t.ok(projects[0].image, 'The project has a image.')
+      t.ok(projects[0].date, 'The project has a date.')
+      t.ok(projects[0].templateClass, 'The project has a templateClass.')
+      t.end()
+    })
+  })
 }
