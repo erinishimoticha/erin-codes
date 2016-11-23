@@ -26,7 +26,7 @@ function runTests () {
     })
   })
 
-  test(`${testName} the insertSkills method with valid params`, t => {
+  test(`${testName} the insertSkill method with valid params`, t => {
     db.insertSkill({
       name: 'Languages',
       desc: 'Node.js, JavaScript, Python, Perl, Java. Familiar with Ruby, Bash, C.',
@@ -39,7 +39,7 @@ function runTests () {
     })
   })
 
-  test(`${testName} the insertSkills method with missing params`, t => {
+  test(`${testName} the insertSkill method with missing params`, t => {
     db.insertSkill({
       name: 'Languages',
       desc: 'Node.js, JavaScript, Python, Perl, Java. Familiar with Ruby, Bash, C.',
@@ -51,7 +51,7 @@ function runTests () {
     })
   })
 
-  test(`${testName} the insertSkills method with invalid string param`, t => {
+  test(`${testName} the insertSkill method with invalid string param`, t => {
     db.insertSkill({
       name: 'Languages',
       desc: 10,
@@ -64,7 +64,7 @@ function runTests () {
     })
   })
 
-  test(`${testName} the insertSkills method with invalid number param`, t => {
+  test(`${testName} the insertSkill method with invalid number param`, t => {
     db.insertSkill({
       name: 'Languages',
       desc: 'Node.js, JavaScript, Python, Perl, Java. Familiar with Ruby, Bash, C.',
