@@ -8,7 +8,9 @@
   "dependencies": {
     "async": "^2.1.4",
     "express": "^4.14.0",
-    "sqlite3": "^3.1.8"
+    "lodash": "^4.17.2",
+    "pg": "^6.1.0",
+    "sequelize": "^3.27.0"
   },
   "scripts": {
     "test": "npm run standard && node test/index.js | tap-spec",
@@ -25,6 +27,7 @@
     ]
   },
   "devDependencies": {
+    "sqlite3": "^3.1.8",
     "standard": "^8.5.0",
     "tap-spec": "^4.1.1",
     "tape": "^4.6.3"
