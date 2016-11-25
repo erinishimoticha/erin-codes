@@ -4,78 +4,72 @@ const test = require('tape')
 const testName = 'db.js'
 const Database = require('../lib/db')
 const db = new Database(':memory:')
+const uuid = require('uuid')
+const async = require('async')
 
 runTests()
 
 function runTests () {
   test(`${testName} the insertSkill method with valid params`, t => {
-    db.insertSkill({
-      name: 'Languages',
-      desc: 'Node.js, JavaScript, Python, Perl, Java. Familiar with Ruby, Bash, C.',
-      icon: 'fa-code',
-      row: 0,
-      side: 0
-    }, err => {
-      t.notOk(err, 'We can insert a set of skills')
-      t.end()
-    })
-  })
+    const skill = newSkill()
 
-  test(`${testName} the insertSkill method again with valid params`, t => {
-    db.insertSkill({
-      name: 'Languages2',
-      desc: 'Node.js, JavaScript, Python, Perl 5, Java. Familiar with Ruby, Bash, C.',
-      icon: 'fa-code',
-      row: 0,
-      side: 1
-    }, err => {
+    db.insertSkill(skill, err => {
       t.notOk(err, 'We can insert a set of skills')
-      t.end()
+
+      db.Skill.findOne({ name: skill.name })
+        .then(res => {
+          t.equals(res.name, skill.name, 'Name is set properly')
+          t.equals(res.desc, skill.desc, 'Description is set properly')
+          t.equals(res.icon, skill.icon, 'Icon is set properly')
+          t.equals(res.row, skill.row, 'Row is set properly')
+          t.equals(res.side, skill.side, 'Side is set properly')
+          reset(t.end)
+        })
+        .catch(err => setImmediate(() => reset(t.end, err)))
     })
   })
 
   test(`${testName} the insertSkill method with missing params`, t => {
-    db.insertSkill({
-      name: 'Languages',
-      desc: 'Node.js, JavaScript, Python, Perl, Java. Familiar with Ruby, Bash, C.',
-      icon: 'fa-code',
-      side: 0
-    }, err => {
+    const skill = newSkill()
+    delete skill.icon
+
+    db.insertSkill(skill, err => {
       t.ok(err, 'We get an error.')
-      t.end()
+      reset(t.end)
     })
   })
 
   test(`${testName} the insertSkill method with invalid string param`, t => {
-    db.insertSkill({
-      name: 'Languages',
-      desc: 10,
-      icon: 'fa-code',
-      row: 0,
-      side: 0
-    }, err => {
+    const skill = newSkill()
+    skill.desc = 10
+
+    db.insertSkill(skill, err => {
       t.ok(err, 'We get an error.')
-      t.end()
+      reset(t.end)
     })
   })
 
   test(`${testName} the insertSkill method with invalid number param`, t => {
-    db.insertSkill({
-      name: 'Languages',
-      desc: 'Node.js, JavaScript, Python, Perl, Java. Familiar with Ruby, Bash, C.',
-      icon: 'fa-code',
-      row: 'wrong',
-      side: 0
-    }, err => {
+    const skill = newSkill()
+    skill.row = 'wrong'
+
+    db.insertSkill(skill, err => {
       t.ok(err, 'We get an error.')
-      t.end()
+      reset(t.end)
     })
   })
 
   test(`${testName} the listSkills`, t => {
-    db.listSkills((err, skills) => {
+    async.parallel([
+      cb => db.insertSkill(newSkill(), cb),
+      cb => db.insertSkill(newSkill(), cb),
+      cb => db.insertSkill(newSkill(), cb),
+      cb => db.listSkills(cb)
+    ], (err, results) => {
+      const skills = results[3]
       t.notOk(err, 'No error is returned.')
       t.ok(skills, 'We can retreive a list of skills.')
+      t.equal(skills.length, 3, 'We get 3')
       t.ok(skills[0], 'The list has entries in it.')
       t.ok(skills[0].name, 'The skill has a name.')
       t.ok(skills[0].desc, 'The skill has a desc.')
@@ -87,22 +81,21 @@ function runTests () {
   })
 
   test(`${testName} the insertProject method with valid params`, t => {
-    db.insertProject({
-      externalLink: 'https://nodesource.com/products/nsolid',
-      type: 'external-link',
-      name: 'N|Solid Node.js Runtime',
-      shortName: 'N|Solid',
-      image: 'images/portfolio/nsolid.png',
-      date: 'June 2016 - Present',
-      templateClass: 'development'
-    }, err => {
+    const project = newProject()
+    db.insertProject(project, err => {
       t.notOk(err, 'We can insert a project')
-      t.end()
+      reset(t.end)
     })
   })
 
   test(`${testName} the listProjects`, t => {
-    db.listProjects((err, projects) => {
+    async.parallel([
+      cb => db.insertProject(newProject(), cb),
+      cb => db.insertProject(newProject(), cb),
+      cb => db.insertProject(newProject(), cb),
+      cb => db.listProjects(cb)
+    ], (err, results) => {
+      const projects = results[3]
       t.notOk(err, 'No error is returned.')
       t.ok(projects, 'We can retreive a list of projects.')
       t.ok(projects[0], 'The list has entries in it.')
@@ -116,4 +109,55 @@ function runTests () {
       t.end()
     })
   })
+}
+
+const newSkill = (function () {
+  let row = 0
+  let side = 0
+
+  return function () {
+    const item = {
+      name: uuid.v4(),
+      desc: uuid.v4(),
+      icon: 'fa-code',
+      row: row,
+      side: side
+    }
+
+    row++
+    side++
+
+    return item
+  }
+})()
+
+const newProject = (function () {
+  return function () {
+    const item = {
+      externalLink: uuid.v4(),
+      type: uuid.v4(),
+      name: uuid.v4(),
+      shortName: uuid.v4(),
+      image: uuid.v4(),
+      date: uuid.v4(),
+      templateClass: uuid.v4()
+    }
+
+    return item
+  }
+})()
+
+function reset (resetCb, err) {
+  async.parallel([
+    cb => {
+      db.Skill.truncate()
+        .then(() => setImmediate(() => cb()))
+        .catch(err => setImmediate(() => cb(err)))
+    },
+    cb => {
+      db.Project.truncate()
+        .then(() => setImmediate(() => cb()))
+        .catch(err => setImmediate(() => cb(err)))
+    }
+  ], err2 => resetCb(err || err2))
 }
