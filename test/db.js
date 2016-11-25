@@ -7,7 +7,8 @@ const db = new Database(':memory:')
 const uuid = require('uuid')
 const async = require('async')
 
-runTests()
+db.on('ready', () => reset(runTests))
+db.on('error', err => console.error(err))
 
 function runTests () {
   test(`${testName} the insertSkill method with valid params`, t => {
@@ -63,20 +64,22 @@ function runTests () {
     async.parallel([
       cb => db.insertSkill(newSkill(), cb),
       cb => db.insertSkill(newSkill(), cb),
-      cb => db.insertSkill(newSkill(), cb),
-      cb => db.listSkills(cb)
-    ], (err, results) => {
-      const skills = results[3]
+      cb => db.insertSkill(newSkill(), cb)
+    ], err => {
       t.notOk(err, 'No error is returned.')
-      t.ok(skills, 'We can retreive a list of skills.')
-      t.equal(skills.length, 3, 'We get 3')
-      t.ok(skills[0], 'The list has entries in it.')
-      t.ok(skills[0].name, 'The skill has a name.')
-      t.ok(skills[0].desc, 'The skill has a desc.')
-      t.ok(skills[0].icon, 'The skill has a icon.')
-      t.notEqual(skills[0].row, undefined, 'The skill has a row.')
-      t.notEqual(skills[0].side, undefined, 'The skill has a side.')
-      t.end()
+
+      db.listSkills((err, skills) => {
+        t.notOk(err, 'No error is returned.')
+        t.ok(skills, 'We can retreive a list of skills.')
+        t.equal(skills.length, 3, 'We get 3')
+        t.ok(skills[0], 'The list has entries in it.')
+        t.ok(skills[0].name, 'The skill has a name.')
+        t.ok(skills[0].desc, 'The skill has a desc.')
+        t.ok(skills[0].icon, 'The skill has a icon.')
+        t.notEqual(skills[0].row, undefined, 'The skill has a row.')
+        t.notEqual(skills[0].side, undefined, 'The skill has a side.')
+        reset(t.end)
+      })
     })
   })
 
@@ -110,21 +113,23 @@ function runTests () {
     async.parallel([
       cb => db.insertProject(newProject(), cb),
       cb => db.insertProject(newProject(), cb),
-      cb => db.insertProject(newProject(), cb),
-      cb => db.listProjects(cb)
-    ], (err, results) => {
-      const projects = results[3]
+      cb => db.insertProject(newProject(), cb)
+    ], err => {
       t.notOk(err, 'No error is returned.')
-      t.ok(projects, 'We can retreive a list of projects.')
-      t.ok(projects[0], 'The list has entries in it.')
-      t.ok(projects[0].externalLink, 'The project has a externalLink.')
-      t.ok(projects[0].type, 'The project has a type.')
-      t.ok(projects[0].name, 'The project has a name.')
-      t.ok(projects[0].shortName, 'The project has a shortName.')
-      t.ok(projects[0].image, 'The project has a image.')
-      t.ok(projects[0].date, 'The project has a date.')
-      t.ok(projects[0].templateClass, 'The project has a templateClass.')
-      t.end()
+
+      db.listProjects((err, projects) => {
+        t.notOk(err, 'No error is returned.')
+        t.ok(projects, 'We can retreive a list of projects.')
+        t.ok(projects[0], 'The list has entries in it.')
+        t.ok(projects[0].externalLink, 'The project has a externalLink.')
+        t.ok(projects[0].type, 'The project has a type.')
+        t.ok(projects[0].name, 'The project has a name.')
+        t.ok(projects[0].shortName, 'The project has a shortName.')
+        t.ok(projects[0].image, 'The project has a image.')
+        t.ok(projects[0].date, 'The project has a date.')
+        t.ok(projects[0].templateClass, 'The project has a templateClass.')
+        reset(t.end)
+      })
     })
   })
 
