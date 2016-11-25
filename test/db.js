@@ -59,7 +59,7 @@ function runTests () {
     })
   })
 
-  test(`${testName} the listSkills`, t => {
+  test(`${testName} the listSkills method`, t => {
     async.parallel([
       cb => db.insertSkill(newSkill(), cb),
       cb => db.insertSkill(newSkill(), cb),
@@ -80,6 +80,24 @@ function runTests () {
     })
   })
 
+  test(`${testName} the destroySkill method with valid params`, t => {
+    const skill = newSkill()
+    db.insertSkill(skill, err => {
+      t.notOk(err, 'We can insert a skill')
+
+      db.destroySkill({ name: skill.name }, err => {
+        t.notOk(err, 'We can destroy the skill')
+
+        db.listSkills((err, list) => {
+          t.notOk(err, 'We can list the skills.')
+          const found = list.find(item => item.name === skill.name)
+          t.notOk(found, 'The deleted skill is not in the list.')
+          reset(t.end)
+        })
+      })
+    })
+  })
+
   test(`${testName} the insertProject method with valid params`, t => {
     const project = newProject()
     db.insertProject(project, err => {
@@ -88,7 +106,7 @@ function runTests () {
     })
   })
 
-  test(`${testName} the listProjects`, t => {
+  test(`${testName} the listProjects method`, t => {
     async.parallel([
       cb => db.insertProject(newProject(), cb),
       cb => db.insertProject(newProject(), cb),
@@ -107,6 +125,24 @@ function runTests () {
       t.ok(projects[0].date, 'The project has a date.')
       t.ok(projects[0].templateClass, 'The project has a templateClass.')
       t.end()
+    })
+  })
+
+  test(`${testName} the destroyProject method with valid params`, t => {
+    const project = newProject()
+    db.insertProject(project, err => {
+      t.notOk(err, 'We can insert a project')
+
+      db.destroyProject({ name: project.name }, err => {
+        t.notOk(err, 'We can destroy the project')
+
+        db.listProjects((err, list) => {
+          t.notOk(err, 'We can list the projects.')
+          const found = list.find(item => item.name === project.name)
+          t.notOk(found, 'The deleted project is not in the list.')
+          reset(t.end)
+        })
+      })
     })
   })
 }
