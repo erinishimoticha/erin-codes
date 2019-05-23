@@ -2,8 +2,9 @@
   "name": "erin-codes",
   "version": "1.0.0",
   "description": "My website & resume.",
+  "repository": "git@github.com:erinspice/erin-codes.git",
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">= 6.0.0 <13.0.0"
   },
   "dependencies": {
     "express": "^4.14.0"
@@ -17,7 +18,10 @@
   "author": "Erin Spiceland <yes@erin.codes>",
   "license": "BSD-2-Clause",
   "standard": {
-    "ignore": ["assets/plugins/", "assets/js/scripts.js"]
+    "ignore": [
+      "assets/plugins/",
+      "assets/js/scripts.js"
+    ]
   },
   "devDependencies": {
     "standard": "^8.5.0",

@@ -13,11 +13,11 @@ erincodes.controller('SkillsPairsController', function ($scope) {
   $scope.pairs = [
     [{
       name: 'Languages',
-      desc: 'Node.js, JavaScript, Python, Perl, Java. Familiar with Ruby, Bash, C.',
+      desc: 'Python, Node.js, JavaScript, Perl, Java. Familiar with Ruby, Bash, C.',
       icon: 'fa-code'
     }, {
       name: 'Databases and Servers',
-      desc: 'Redis, PostGreSQL, InfluxDB, DynamoDB, MySQL, Apache, Asterisk. Familiar with MongoDB, Lighttpd, Tomcat.',
+      desc: 'Redis, PostgreSQL, MySQL, SQL Server, InfluxDB, DynamoDB, Apache, Asterisk. Familiar with HTCondor, MongoDB, Lighttpd, Tomcat.',
       icon: 'fa-database'
     }], [{
       name: 'Protocols and Standards',
@@ -29,11 +29,11 @@ erincodes.controller('SkillsPairsController', function ($scope) {
       icon: 'fa-list-ol'
     }], [{
       name: 'Operating Systems and Platforms',
-      desc: 'Linux, Unix, OS X. Heroku, Familiar with AWS.',
+      desc: 'Linux, Unix, OS X. Docker, VirtualBox, Vagrant. Heroku, Familiar with AWS.',
       icon: 'fa-linux'
     }, {
       name: 'Specialties',
-      desc: 'Software Architecture, API design, Integration, Interoperability, Backend Software Engineering and Development.',
+      desc: 'Software Architecture, API design, Build Systems, Integration, Interoperability, Backend Software Engineering and Development.',
       icon: 'fa-trophy'
     }]
   ]
@@ -43,12 +43,21 @@ erincodes.controller('ProjectsController', function ($scope) {
   // set dataPluginOptions: '{'type':'iframe'}' for youtube
 
   $scope.projects = [{
+    externalLink: 'https://spacex.com',
+    type: 'external-link',
+    name: 'SpaceX',
+    shortName: 'SpaceX',
+    image: 'images/portfolio/spacex.jpg',
+    date: 'August 2017 - Present',
+    templateClass: 'development',
+    dataPluginOptions: ''
+  }, {
     externalLink: 'https://nodesource.com/products/nsolid',
     type: 'external-link',
     name: 'N|Solid Node.js Runtime',
     shortName: 'N|Solid',
     image: 'images/portfolio/nsolid.png',
-    date: 'June 2016 - Present',
+    date: 'June 2016 - July 2017',
     templateClass: 'development',
     dataPluginOptions: ''
   }, {
