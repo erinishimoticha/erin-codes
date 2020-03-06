@@ -1,68 +1,68 @@
 ==================================================================
-https://keybase.io/erinspice
+https://keybase.io/erinishimoticha
 --------------------------------------------------------------------
 
 I hereby claim:
 
   * I am an admin of http://yes.erin.codes
-  * I am erinspice (https://keybase.io/erinspice) on keybase.
-  * I have a public key with fingerprint 2E57 0338 AEE6 41DA 6083  90D7 8713 5611 F7FE F84E
+  * I am erinishimoticha (https://keybase.io/erinishimoticha) on keybase.
+  * I have a public key with fingerprint 6610 578C CB10 FD5E EDCA  48B0 1409 05BB B2F7 8A2B
 
 To do so, I am signing this object:
 
 {
-    "body": {
-        "key": {
-            "fingerprint": "2e570338aee641da608390d787135611f7fef84e",
-            "host": "keybase.io",
-            "key_id": "87135611f7fef84e",
-            "kid": "010143dfd5ba8e78817b7bc17d64f6d46cc63fa4ccc38ba616cf661a7f04e6f5b6390a",
-            "uid": "6866102258ca5cbb712f5552539acf00",
-            "username": "erinspice"
-        },
-        "service": {
-            "hostname": "yes.erin.codes",
-            "protocol": "http:"
-        },
-        "type": "web_service_binding",
-        "version": 1
+  "body": {
+    "key": {
+      "eldest_kid": "0101884663fd9642315aa636add7cac63db71406de03d3d77ddcbdcf657e2696ebb80a",
+      "fingerprint": "6610578ccb10fd5eedca48b0140905bbb2f78a2b",
+      "host": "keybase.io",
+      "key_id": "140905bbb2f78a2b",
+      "kid": "0101884663fd9642315aa636add7cac63db71406de03d3d77ddcbdcf657e2696ebb80a",
+      "uid": "d4e4b8b6e6b52d94c4bcbbb9b1baa219",
+      "username": "erinishimoticha"
     },
-    "ctime": 1432236211,
-    "expire_in": 157680000,
-    "prev": "b79a123e8f4599588f0628fee30b18e56e1d5aa1701e7db34905c4ada99ef0fb",
-    "seqno": 13,
-    "tag": "signature"
+    "service": {
+      "hostname": "yes.erin.codes",
+      "protocol": "http:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1583520151,
+  "expire_in": 157680000,
+  "prev": "596514bec75ec6bb88c82860133dd0da1bae4b23be205c22e0c125468dc0f393",
+  "seqno": 4,
+  "tag": "signature"
 }
 
 which yields the signature:
 
 -----BEGIN PGP MESSAGE-----
-Version: Keybase OpenPGP v2.0.8
+Version: Keybase OpenPGP v2.1.13
 Comment: https://keybase.io/crypto
 
-yMIeAnicbZJbSBVBGMePZWmCUlRiJEoLkZmddvYyO3vQbpQPSedgZaaJNrs7o5u6
-e9yz3jrpQ3BSkPAlsBtB4tGgh4wuHCEhowLxJUNMQgssuwjRQ0Qvlc2KvTUvM/N9
-v+8/3/9jnqWv9qUlvT/dXbn/u0OTJsYONfvKqvn7UU6zjXYuEOXqyfJGTauWOGHH
-tFwuwAlEVnhRRJgQKAEDQx6JKm8oSAGiDAGgCiUUSYQr4OrsiFfBZDQcIX7TZjF2
-qTENFv0PX7+c4AEPJNGghqxhRBSEgKIpmg4UA0oUGhLUdShSLOm6LiINQwB1CiHA
-CuUlAqmsQdYPZnLNy3IQsSQvCDLSsaxrmgIEKsuyIIsq1inPe2CEOBZuJIwmzGUk
-bOqE6yjgWLjFO7IZeFZWkHYS8XuYX7cNEmHlYcd2bd1uYLk61w0HvFK3PeyxrUSr
-WVGp0UzLYJNkBS3EiZi2xQUAI3XX9GSZZUEQoQBAAUfawqZDakyPkBWIeLa8Z0gL
-k9QUFQNBJIhKsqrKCFEeCogSIvIaQESGBBgyxkDhAVEMTZRUXtYlbGBVJZSnGuf5
-arJspi2yPnEt04yYtRZ2mx3m+umTqmRfUppv7ZpV3mfwpa1b/++LrAqm/PG/uobe
-CieCZSXVeUvZZ3PsjsV3DztKu7oLhV11reez98Q6cy40OdF3SblFB54Pfsn9/AmN
-dva5x5TU6/fmRzdtsBeTGx9vuzV1Mb3tw0GkxfMrCyvGR2/unM0tTixUbzm5PWj1
-gY9qvCfonx7/NhnK2NSROHf58PE7eGGm8UhFdOpS7t7irDMPHP9Q9/COW529RY9+
-dyVGRlNu5ycq50NBdy6W8v7xTFt5qHQ4s+frUuvL8qvjVT9nU5c2Tm5ubb9yN+9z
-v5KXltG8GAq92BqPT080nKr6VVReUTYQeN1/tLdkYF/1jenusUkxM7ZlfvBHcn7v
-yO6suQ3W0JtYLJr4C7sAJTg=
-=LcPu
+yMIqAnicrVJbSBRRGN7Vslwqk4qiKGnKJDOZc2bmzMxiF4IiIyEkhEzazm3XSXdn
+25m1tW0DwzCIsAdLFDGCogv0ElFEWhkVQRciuhdUghWREYS1FF3OiL312Hk5nPN/
+3/d/389/fXKuL+DfP696WTKnJeO/PXAk6dtCujrTErFZsxRMSw189OKNjDtuqMFi
+UlCSgQwMQ0VICTMTqVABGsZIQZgxnWKKFEZ0oMqIcVlhCtN1xihhNIw0nUNkIk6I
+IWOpTApbsQhPxBNWzBWyCAFZ0w1KCZDDTOOcUawaRBZSpqwRQmBYNzAkglhvOx5D
+mCPY4eWWLf7EIzRq7x/4/+w7OSrHVK4SgyCOiAaZqVKVUNHVJIBgDIHpAR2eiOEo
+F2guUlpOvRW1XYvWYylTJolik0W5N18v0BiwmTvlHric2mLmQiSesF2b2o2iVu+6
+8aBHdZvjHnYHJ6ExlRCxYkzMUxCaeMKx7JgUBAJJXcuTBZqhaFAGGiiTeCpuJXjI
+8hCajgxZHK8NbxKSmok0oBJOdY1TJBIb1IAGkoGiMCYzLMKJ2FAhHMoahZDLFEBN
+RQajclgxFcnLtT1mS0FV2MQRIelYkRh2kwkuZa5drRvn8wd8eeNzvD3zBfKn/t2+
+4VMTflfeuj+tZgY91B/t6k6F7j9KTx/ka6E6cWJFp1TSUKyBOef835bsW9ZWdPJ3
+17bAupGCVXUH9944U/a1tK/94uLdj/usllNdu/LmLWp7gO5WDlV1wKKCpWhPa7QD
+T74y9/TONYd3JOc0PfxwqBuXrs7+fDil4Ong9Y52cK9xz4u+920L8KVj+cXVl0c2
+tEenvV5R6b6uKbnWO3Vj/uebFzfPb1/44Gldae4mDnEL5q1njYq31Rf8FZ+ymeyT
+ld9ri6t+zcyL3Dl+YOnW8y9nnc92vsr0DHx58zHvTqR7eWfh+sKGVGH10aFN5pYL
+4f5JvSdqZveMwHTJs3fFRu7wc+6kftT+AZgFP3U=
+=rULP
 -----END PGP MESSAGE-----
 
 And finally, I am proving ownership of this host by posting or
 appending to this document.
 
-View my publicly-auditable identity here: https://keybase.io/erinspice
+View my publicly-auditable identity here: https://keybase.io/erinishimoticha
 
 ==================================================================
-

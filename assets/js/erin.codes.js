@@ -88,7 +88,7 @@ erincodes.controller('ProjectsController', function ($scope) {
     templateClass: 'photography',
     dataPluginOptions: ''
   }, {
-    externalLink: 'https://github.com/erinspice/geni-perl',
+    externalLink: 'https://github.com/erinishimoticha/geni-perl',
     type: 'external-link',
     name: 'WWW::Geni Perl Module',
     shortName: 'WWW::Geni Perl Module',
@@ -106,7 +106,7 @@ erincodes.controller('ProjectsController', function ($scope) {
     templateClass: 'design',
     dataPluginOptions: ''
   }, {
-    externalLink: 'https://github.com/erinspice/erin-codes',
+    externalLink: 'https://github.com/erinishimoticha/erin-codes',
     type: 'external-link',
     name: 'This website: Erin Codes',
     shortName: 'This website: Erin Codes',
@@ -115,7 +115,7 @@ erincodes.controller('ProjectsController', function ($scope) {
     templateClass: 'development',
     dataPluginOptions: ''
   }, {
-    externalLink: 'https://github.com/erinspice/confluence-jsdoc-template',
+    externalLink: 'https://github.com/erinishimoticha/confluence-jsdoc-template',
     type: 'external-link',
     name: 'JSDoc3 Confluence Template',
     shortName: 'JSDoc3 Confluence Template',
@@ -132,7 +132,7 @@ erincodes.controller('ProjectsController', function ($scope) {
     templateClass: 'design',
     dataPluginOptions: ''
   }, {
-    externalLink: 'https://github.com/erinspice/geni-rootsweb-gedcom-santizer',
+    externalLink: 'https://github.com/erinishimoticha/geni-rootsweb-gedcom-santizer',
     type: 'external-link',
     name: 'GEDCOM Formatter for Ancestry.com\'s RootsWeb',
     shortName: 'GEDCOM Parser',
@@ -141,7 +141,7 @@ erincodes.controller('ProjectsController', function ($scope) {
     templateClass: 'development',
     dataPluginOptions: ''
   }, {
-    externalLink: 'https://github.com/erinspice/geni-automerge',
+    externalLink: 'https://github.com/erinishimoticha/geni-automerge',
     type: 'external-link',
     name: 'Geni.com Profile Merger',
     shortName: 'Geni.com Profile Merger',

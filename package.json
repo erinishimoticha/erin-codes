@@ -2,7 +2,7 @@
   "name": "erin-codes",
   "version": "1.0.0",
   "description": "My website & resume.",
-  "repository": "git@github.com:erinspice/erin-codes.git",
+  "repository": "git@github.com:erinishimoticha/erin-codes.git",
   "engines": {
     "node": ">= 6.0.0 <13.0.0"
   },
